@@ -4,7 +4,7 @@
         <client_script><![CDATA[function() {
   /* widget controller */
   var c = this;
-	
+
 }]]></client_script>
         <controller_as>c</controller_as>
         <css/>
@@ -27,15 +27,15 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2018-10-02 17:11:57</sys_created_on>
         <sys_id>26093a57dbb42300656053184b9619ee</sys_id>
-        <sys_mod_count>5</sys_mod_count>
+        <sys_mod_count>8</sys_mod_count>
         <sys_name>XR Viewer Widget</sys_name>
         <sys_package display_value="OAB IR Asset Viewer POC" source="x_12167_oab_ir_ass">fd05fe93dbb42300656053184b961908</sys_package>
         <sys_policy/>
         <sys_scope display_value="OAB IR Asset Viewer POC">fd05fe93dbb42300656053184b961908</sys_scope>
         <sys_update_name>sp_widget_26093a57dbb42300656053184b9619ee</sys_update_name>
-        <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2018-10-02 19:53:47</sys_updated_on>
-        <template><![CDATA[<a-scene stats embedded arjs='trackingMethod: best;sourceType: webcam;debugUIEnabled: false'>
+        <sys_updated_by>sylvain</sys_updated_by>
+        <sys_updated_on>2018-10-03 06:42:04</sys_updated_on>
+        <template><![CDATA[<a-scene id="preview" stats embedded arjs='trackingMethod: best;sourceType: webcam;debugUIEnabled: true'>
   <a-marker preset="hiro">
     <a-box position='0 1 0' material='color: blue;'>
     </a-box>

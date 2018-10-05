@@ -4,24 +4,24 @@
         <css/>
         <draft>false</draft>
         <dynamic_title_structure/>
-        <id>xr_viewer</id>
+        <id>xr_scanner</id>
         <internal>false</internal>
-        <public>true</public>
+        <public>false</public>
         <roles/>
         <short_description/>
         <sys_class_name>sp_page</sys_class_name>
-        <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2018-10-02 16:57:15</sys_created_on>
-        <sys_id>63a5bad3dbb42300656053184b96194a</sys_id>
-        <sys_mod_count>2</sys_mod_count>
-        <sys_name>xr_viewer</sys_name>
+        <sys_created_by>syvon</sys_created_by>
+        <sys_created_on>2018-10-04 15:38:52</sys_created_on>
+        <sys_id>7ae6fc044f8d2300171571dd0210c785</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>xr_scanner</sys_name>
         <sys_package display_value="OAB IR Asset Viewer POC" source="x_12167_oab_ir_ass">fd05fe93dbb42300656053184b961908</sys_package>
         <sys_policy/>
         <sys_scope display_value="OAB IR Asset Viewer POC">fd05fe93dbb42300656053184b961908</sys_scope>
-        <sys_update_name>sp_page_63a5bad3dbb42300656053184b96194a</sys_update_name>
+        <sys_update_name>sp_page_7ae6fc044f8d2300171571dd0210c785</sys_update_name>
         <sys_updated_by>syvon</sys_updated_by>
-        <sys_updated_on>2018-10-04 15:42:28</sys_updated_on>
-        <title>XR Viewer</title>
+        <sys_updated_on>2018-10-04 15:38:52</sys_updated_on>
+        <title>XR Scanner</title>
     </sp_page>
-    <sys_translated_text action="delete_multiple" query="documentkey=63a5bad3dbb42300656053184b96194a"/>
+    <sys_translated_text action="delete_multiple" query="documentkey=7ae6fc044f8d2300171571dd0210c785"/>
 </record_update>

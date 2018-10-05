@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="m2m_sp_dependency_js_include">
     <m2m_sp_dependency_js_include action="INSERT_OR_UPDATE">
-        <order>100</order>
-        <sp_dependency display_value="aframe-ar-qr">b291e79bdbf42300656053184b9619a9</sp_dependency>
+        <order>90</order>
+        <sp_dependency display_value="aframe-ar">b291e79bdbf42300656053184b9619a9</sp_dependency>
         <sp_js_include display_value="aframe.js">03779b57dbf42300656053184b9619ed</sp_js_include>
         <sys_class_name>m2m_sp_dependency_js_include</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2018-10-02 20:09:31</sys_created_on>
         <sys_id>73a1ab9bdbf42300656053184b961928</sys_id>
-        <sys_mod_count>0</sys_mod_count>
-        <sys_name>aframe-ar.aframe.js</sys_name>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>aframe-ar-qr.aframe.js</sys_name>
         <sys_package display_value="OAB IR Asset Viewer POC" source="x_12167_oab_ir_ass">fd05fe93dbb42300656053184b961908</sys_package>
         <sys_policy/>
         <sys_scope display_value="OAB IR Asset Viewer POC">fd05fe93dbb42300656053184b961908</sys_scope>
         <sys_update_name>m2m_sp_dependency_js_include_73a1ab9bdbf42300656053184b961928</sys_update_name>
-        <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2018-10-02 20:09:31</sys_updated_on>
+        <sys_updated_by>syvon</sys_updated_by>
+        <sys_updated_on>2018-10-04 15:42:58</sys_updated_on>
     </m2m_sp_dependency_js_include>
 </record_update>

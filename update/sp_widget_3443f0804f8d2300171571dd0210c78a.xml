@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
     <sp_widget action="INSERT_OR_UPDATE">
         <category>custom</category>
-        <client_script><![CDATA[function() {
+        <client_script><![CDATA[function($scope, $http, $timeout, $location) {
   /* widget controller */
   var c = this;
-/*	var opts = {
+	
+	var opts = {
 		// Whether to scan continuously for QR codes. If false, use scanner.scan() to manually scan.
 		// If true, the scanner emits the "scan" event when a QR code is scanned. Default true.
 		continuous: true,
@@ -45,7 +46,8 @@
 		console.log("**instascan is inactive");
 	});
 	scanner.addListener('scan', function (content) {
-		console.log("**instascan > " + content);
+		console.log("**instascan found " + content);
+		$location.search('id=xr_viewer&sys_id=' + encodeURIComponent(content));
 	});
 	Instascan.Camera.getCameras().then(function (cameras) {
 		if (cameras.length > 0) {
@@ -54,57 +56,40 @@
 		} else {
 			console.error('**instascan No cameras found.');
 		}
-	});*/
+	});
 }]]></client_script>
         <controller_as>c</controller_as>
-        <css>a-scene {
-	display: block;
-  width: 50%;
+        <css>#preview {
+  width: 600px;
   height: 600px;
-}
-/*video {
-	visibility: hidden;
-}*/</css>
+}</css>
         <data_table>sp_instance</data_table>
         <demo_data/>
         <description/>
         <docs/>
         <field_list/>
         <has_preview>false</has_preview>
-        <id>xr-viewer-widget</id>
+        <id>xr-viewer-scanner</id>
         <internal>false</internal>
         <link/>
-        <name>XR Viewer Widget</name>
+        <name>XR Viewer Scanner</name>
         <option_schema/>
         <public>false</public>
         <roles/>
-        <script><![CDATA[(function() { 
-	data.sys_id = $sp.getParameter("sys_id");
-	data.table = $sp.getParameter("table") || "alm_asset"; // assume it's an asset
-	
-	var rec = $sp.getRecord(data.table, data.sys_id);
-	data.isValid = rec.isValid() || data.sys_id == "-1";
-	
-	$sp.log(gr.getDisplayValue());
-})();]]></script>
+        <script><![CDATA[(function() {  /* populate the 'data' object */  /* e.g., data.table = $sp.getValue('table'); */})();]]></script>
         <servicenow>false</servicenow>
         <sys_class_name>sp_widget</sys_class_name>
-        <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2018-10-02 17:11:57</sys_created_on>
-        <sys_id>26093a57dbb42300656053184b9619ee</sys_id>
-        <sys_mod_count>19</sys_mod_count>
-        <sys_name>XR Viewer Widget</sys_name>
+        <sys_created_by>syvon</sys_created_by>
+        <sys_created_on>2018-10-04 15:22:54</sys_created_on>
+        <sys_id>3443f0804f8d2300171571dd0210c78a</sys_id>
+        <sys_mod_count>9</sys_mod_count>
+        <sys_name>XR Viewer Scanner</sys_name>
         <sys_package display_value="OAB IR Asset Viewer POC" source="x_12167_oab_ir_ass">fd05fe93dbb42300656053184b961908</sys_package>
         <sys_policy/>
         <sys_scope display_value="OAB IR Asset Viewer POC">fd05fe93dbb42300656053184b961908</sys_scope>
-        <sys_update_name>sp_widget_26093a57dbb42300656053184b9619ee</sys_update_name>
+        <sys_update_name>sp_widget_3443f0804f8d2300171571dd0210c78a</sys_update_name>
         <sys_updated_by>syvon</sys_updated_by>
-        <sys_updated_on>2018-10-05 06:26:12</sys_updated_on>
-        <template><![CDATA[<a-scene stats embedded arjs='trackingMethod: best;sourceType: webcam;'>
-  <a-marker preset="hiro">
-    <a-text value="Hello, World!"></a-text>
-  </a-marker>
-  <a-entity camera></a-entity>
-</a-scene>]]></template>
+        <sys_updated_on>2018-10-05 06:13:04</sys_updated_on>
+        <template><![CDATA[<video id="preview"></video>]]></template>
     </sp_widget>
 </record_update>

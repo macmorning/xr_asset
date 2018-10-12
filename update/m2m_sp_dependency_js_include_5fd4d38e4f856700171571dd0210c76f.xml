@@ -2,18 +2,18 @@
     <m2m_sp_dependency_js_include action="INSERT_OR_UPDATE">
         <order>100</order>
         <sp_dependency display_value="aframe-ar">b291e79bdbf42300656053184b9619a9</sp_dependency>
-        <sp_js_include display_value="aframe-ar.js">ba579b57dbf42300656053184b961934</sp_js_include>
+        <sp_js_include display_value="aframe-master.min.js">5ea4d38e4f856700171571dd0210c739</sp_js_include>
         <sys_class_name>m2m_sp_dependency_js_include</sys_class_name>
-        <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2018-10-02 20:09:31</sys_created_on>
-        <sys_id>bfa1ab9bdbf42300656053184b961925</sys_id>
+        <sys_created_by>syvon</sys_created_by>
+        <sys_created_on>2018-10-11 08:16:48</sys_created_on>
+        <sys_id>5fd4d38e4f856700171571dd0210c76f</sys_id>
         <sys_mod_count>0</sys_mod_count>
-        <sys_name>aframe-ar.aframe-ar.js</sys_name>
+        <sys_name>aframe-ar.aframe-master.min.js - master</sys_name>
         <sys_package display_value="OAB IR Asset Viewer POC" source="x_12167_oab_ir_ass">fd05fe93dbb42300656053184b961908</sys_package>
         <sys_policy/>
         <sys_scope display_value="OAB IR Asset Viewer POC">fd05fe93dbb42300656053184b961908</sys_scope>
-        <sys_update_name>m2m_sp_dependency_js_include_bfa1ab9bdbf42300656053184b961925</sys_update_name>
-        <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2018-10-02 20:09:31</sys_updated_on>
+        <sys_update_name>m2m_sp_dependency_js_include_5fd4d38e4f856700171571dd0210c76f</sys_update_name>
+        <sys_updated_by>syvon</sys_updated_by>
+        <sys_updated_on>2018-10-11 08:16:48</sys_updated_on>
     </m2m_sp_dependency_js_include>
 </record_update>

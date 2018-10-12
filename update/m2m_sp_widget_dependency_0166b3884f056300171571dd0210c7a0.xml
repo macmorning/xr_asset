@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="m2m_sp_widget_dependency">
     <m2m_sp_widget_dependency action="INSERT_OR_UPDATE">
-        <sp_dependency display_value="instascan">5522f9ebdb302300656053184b9619f9</sp_dependency>
+        <sp_dependency display_value="scanner">5522f9ebdb302300656053184b9619f9</sp_dependency>
         <sp_widget display_value="XR Viewer Widget">26093a57dbb42300656053184b9619ee</sp_widget>
         <sys_class_name>m2m_sp_widget_dependency</sys_class_name>
         <sys_created_by>syvon</sys_created_by>

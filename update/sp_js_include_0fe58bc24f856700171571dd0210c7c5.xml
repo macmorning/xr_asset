@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sp_js_include">
     <sp_js_include action="INSERT_OR_UPDATE">
-        <display_name>aframe-ar.js</display_name>
+        <display_name>aframe.min.js</display_name>
         <source>url</source>
         <sys_class_name>sp_js_include</sys_class_name>
-        <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2018-10-02 19:24:47</sys_created_on>
-        <sys_id>ba579b57dbf42300656053184b961934</sys_id>
-        <sys_mod_count>9</sys_mod_count>
-        <sys_name>aframe-ar.js</sys_name>
+        <sys_created_by>syvon</sys_created_by>
+        <sys_created_on>2018-10-11 07:12:08</sys_created_on>
+        <sys_id>0fe58bc24f856700171571dd0210c7c5</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_name>aframe.min.js</sys_name>
         <sys_package display_value="OAB IR Asset Viewer POC" source="x_12167_oab_ir_ass">fd05fe93dbb42300656053184b961908</sys_package>
         <sys_policy/>
         <sys_scope display_value="OAB IR Asset Viewer POC">fd05fe93dbb42300656053184b961908</sys_scope>
         <sys_ui_script/>
-        <sys_update_name>sp_js_include_ba579b57dbf42300656053184b961934</sys_update_name>
+        <sys_update_name>sp_js_include_0fe58bc24f856700171571dd0210c7c5</sys_update_name>
         <sys_updated_by>syvon</sys_updated_by>
-        <sys_updated_on>2018-10-11 07:24:24</sys_updated_on>
-        <url>https://cdn.rawgit.com/jeromeetienne/AR.js/1.6.0/aframe/build/aframe-ar.js</url>
+        <sys_updated_on>2018-10-11 08:17:01</sys_updated_on>
+        <url>https://aframe.io/releases/0.8.0/aframe.min.js</url>
     </sp_js_include>
 </record_update>

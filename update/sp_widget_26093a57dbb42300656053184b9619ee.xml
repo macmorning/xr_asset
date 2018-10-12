@@ -4,57 +4,66 @@
         <client_script><![CDATA[function ($scope, $location, $rootScope, spUtil, $interpolate) {
 	var c = this;
 	
-	/*	var opts = {
-		// Whether to scan continuously for QR codes. If false, use scanner.scan() to manually scan.
-		// If true, the scanner emits the "scan" event when a QR code is scanned. Default true.
-		continuous: true,
-
-		// The HTML element to use for the camera's video preview. Must be a <video> element.
-		// When the camera is active, this element will have the "active" CSS class, otherwise,
-		// it will have the "inactive" class. By default, an invisible element will be created to
-		// host the video.
-		video: document.getElementById('preview'),
-
-		// Whether to horizontally mirror the video preview. This is helpful when trying to
-		// scan a QR code with a user-facing camera. Default true.
-		mirror: false,
-
-		// Whether to include the scanned image data as part of the scan result. See the "scan" event
-		// for image format details. Default false.
-		captureImage: false,
-
-		// Only applies to continuous mode. Whether to actively scan when the tab is not active.
-		// When false, this reduces CPU usage when the tab is not active. Default true.
-		backgroundScan: true,
-
-		// Only applies to continuous mode. The period, in milliseconds, before the same QR code
-		// will be recognized in succession. Default 5000 (5 seconds).
-		refractoryPeriod: 5000,
-
-		// Only applies to continuous mode. The period, in rendered frames, between scans. A lower scan period
-		// increases CPU usage but makes scan response faster. Default 1 (i.e. analyze every frame).
-		scanPeriod: 10
-	};
+	c.update = function update(content) {
+			c.data.sys_id = content;
+			c.server.update();
+	}
 	
-	var scanner = new Instascan.Scanner(opts);
-	
-	scanner.addListener('active', function (content) {
-		console.log("**instascan is active");
-	});
-	scanner.addListener('inactive', function (content) {
-		console.log("**instascan is inactive");
-	});
-	scanner.addListener('scan', function (content) {
-		console.log("**instascan > " + content);
-	});
-	Instascan.Camera.getCameras().then(function (cameras) {
-		if (cameras.length > 0) {
-			scanner.start(cameras[0]);
-			console.log("**instascan started");
-		} else {
-			console.error('**instascan No cameras found.');
-		}
-	});*/
+	top.setTimeout(function() {
+		var opts = {
+			// Whether to scan continuously for QR codes. If false, use scanner.scan() to manually scan.
+			// If true, the scanner emits the "scan" event when a QR code is scanned. Default true.
+			continuous: true,
+
+			// The HTML element to use for the camera's video preview. Must be a <video> element.
+			// When the camera is active, this element will have the "active" CSS class, otherwise,
+			// it will have the "inactive" class. By default, an invisible element will be created to
+			// host the video.
+			video: document.querySelector('video'),
+
+			// Whether to horizontally mirror the video preview. This is helpful when trying to
+			// scan a QR code with a user-facing camera. Default true.
+			mirror: false,
+
+			// Whether to include the scanned image data as part of the scan result. See the "scan" event
+			// for image format details. Default false.
+			captureImage: false,
+
+			// Only applies to continuous mode. Whether to actively scan when the tab is not active.
+			// When false, this reduces CPU usage when the tab is not active. Default true.
+			backgroundScan: true,
+
+			// Only applies to continuous mode. The period, in milliseconds, before the same QR code
+			// will be recognized in succession. Default 5000 (5 seconds).
+			refractoryPeriod: 5000,
+
+			// Only applies to continuous mode. The period, in rendered frames, between scans. A lower scan period
+			// increases CPU usage but makes scan response faster. Default 1 (i.e. analyze every frame).
+			scanPeriod: 10
+		};
+
+		var scanner = new Instascan.Scanner(opts);
+
+		scanner.addListener('active', function (content) {
+			console.log("**instascan is active");
+		});
+		scanner.addListener('inactive', function (content) {
+			console.log("**instascan is inactive");
+		});
+		scanner.addListener('scan', function (content) {
+			console.log("**instascan > " + content);
+			c.update(content);
+		});
+		Instascan.Camera.getCameras().then(function (cameras) {
+			if (cameras.length > 0) {
+				scanner.start(cameras[0]);
+				console.log("**instascan started");
+			} else {
+				console.error('**instascan No cameras found.');
+			}
+		});
+		
+	}, 5000);
 }]]></client_script>
         <controller_as>c</controller_as>
         <css>a-scene {
@@ -80,7 +89,13 @@
         <roles/>
         <script><![CDATA[(function() { 
 	options.fields = options.fields || ["assigned_to","install_status","warranty_expiration","serial_number"];
-	data.sys_id = $sp.getParameter("sys_id");
+	
+	if (input) {
+		$sp.log("** input > " + JSON.stringify(input));
+		data.sys_id = input.sys_id;
+	} else {
+		data.sys_id = $sp.getParameter("sys_id");
+	}
 	$sp.log("** XR Viewer server / " + data.sys_id);
 	$sp.log(options.fields.join(","));
 	if (!data.sys_id) {
@@ -100,9 +115,6 @@
 		data.tableLabel = rec.getClassDisplayValue();
 		data.displayValue = rec.getDisplayValue();
 		$sp.log("** record found : " + data.tableLabel + " / " + data.displayValue);
-		/*var obj = {};
-		$sp.getRecordDisplayValues(obj, rec, options.fields.join(","));
-		$sp.log(JSON.stringify(obj));*/
 		data.secondaryFields = "";
 		options.fields.forEach(function(field) {
 			data.secondaryFields += rec.getDisplayValue(field) + "\r\n";
@@ -119,15 +131,15 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2018-10-02 17:11:57</sys_created_on>
         <sys_id>26093a57dbb42300656053184b9619ee</sys_id>
-        <sys_mod_count>64</sys_mod_count>
+        <sys_mod_count>77</sys_mod_count>
         <sys_name>XR Viewer Widget</sys_name>
         <sys_package display_value="OAB IR Asset Viewer POC" source="x_12167_oab_ir_ass">fd05fe93dbb42300656053184b961908</sys_package>
         <sys_policy/>
         <sys_scope display_value="OAB IR Asset Viewer POC">fd05fe93dbb42300656053184b961908</sys_scope>
         <sys_update_name>sp_widget_26093a57dbb42300656053184b9619ee</sys_update_name>
         <sys_updated_by>syvon</sys_updated_by>
-        <sys_updated_on>2018-10-11 08:22:28</sys_updated_on>
-        <template><![CDATA[<a-scene stats embedded arjs='trackingMethod: best;sourceType: webcam;'>
+        <sys_updated_on>2018-10-12 07:58:23</sys_updated_on>
+        <template><![CDATA[<a-scene embedded arjs='trackingMethod: best;sourceType: webcam;'>
   <a-assets>
     <a-mixin id="main-text"
        text="align: center; width: 0.6;">

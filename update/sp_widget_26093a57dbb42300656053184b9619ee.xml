@@ -3,30 +3,38 @@
         <category>custom</category>
         <client_script><![CDATA[function ($scope, $location, $rootScope, spUtil, $interpolate) {
 	var c = this;
-	var videoEl;
-	
+
 	c.update = function update(content) {
 			c.data.sys_id = content;
 			c.server.update();
 	}
 
-
+  $scope.artoggle = {};
+  $scope.artoggle['switch'] = false;
+	$scope.$watch("artoggle.switch" ,function (newValue, oldValue, scope) {
+		if(newValue == true) {
+			$("video").hide();
+		} else {
+			$("video").show();
+		}
+	});
+								
 	var timerId = setInterval(function(){
 		// wait until the video tag exists
-		if(!(videoEl = document.querySelector("video"))) {
+		if(!($scope.videoEl = $("video")[0])) {
 			return;
 		}
 		clearInterval(timerId);
 		
 		// reparent the video element so that it's inside our widget container
 		var parentDiv = document.querySelector("a-scene").parentElement;
-		parentDiv.appendChild(videoEl);
+		parentDiv.appendChild($scope.videoEl);
 		document.getElementById("arjsDebugUIContainer").style.display = "none";
 		
-		/* instanciate instascan */
+		// instanciate instascan
 		var opts = {
 			continuous: true,
-			video: videoEl,
+			video: $scope.videoEl,
 			mirror: false,
 			captureImage: false,
 			backgroundScan: true,
@@ -58,10 +66,9 @@
 		document.getElementById("marker").addEventListener("markerFound", function(e) {
 			console.log("**arjs marker found > ");
 			console.log(e);
-		});
+		});		
+	}, 1000);	
 
-	}, 1000);
-	
 }]]></client_script>
         <controller_as>c</controller_as>
         <css>.overlay {
@@ -72,7 +79,7 @@
   background:#7f7f7f;
   background:rgba(0,0,0,0.8);
   color: orange;
-  
+  font-size: smaller;
   a {
     color: orange;
   }
@@ -84,10 +91,43 @@
 }
 
 #options-panel {
-  display: none;
   right: 20px;
   top: 60px;
-}</css>
+  font-size: x-large;
+  .btn-switch {
+      position: relative;
+      display: inline-block;
+      width: 50px;
+      height: 25px;
+      cursor: pointer;
+      background-color: gray;
+      border: 2px solid gray;
+      border-radius: 40px;
+
+      .btn-switch-circle {
+          position: absolute;
+          top: 0;
+          left: 0;
+          display: block;
+          height: 25px;
+          width: 25px;
+          background-color: #fff;
+          border-radius: 40px;
+      }
+  }
+
+  .btn-switch--on {
+      background-color: orange;
+      border: 2px solid orange;
+
+      .btn-switch-circle--on {
+          left: auto;
+          right: 0;
+      }
+  }
+}
+
+</css>
         <data_table>sp_instance</data_table>
         <demo_data/>
         <description/>
@@ -148,15 +188,19 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2018-10-02 17:11:57</sys_created_on>
         <sys_id>26093a57dbb42300656053184b9619ee</sys_id>
-        <sys_mod_count>151</sys_mod_count>
+        <sys_mod_count>191</sys_mod_count>
         <sys_name>XR Viewer Widget</sys_name>
         <sys_package display_value="OAB IR Asset Viewer POC" source="x_12167_oab_ir_ass">fd05fe93dbb42300656053184b961908</sys_package>
         <sys_policy/>
         <sys_scope display_value="OAB IR Asset Viewer POC">fd05fe93dbb42300656053184b961908</sys_scope>
         <sys_update_name>sp_widget_26093a57dbb42300656053184b9619ee</sys_update_name>
         <sys_updated_by>syvon</sys_updated_by>
-        <sys_updated_on>2018-10-16 08:53:15</sys_updated_on>
+        <sys_updated_on>2018-11-20 07:39:44</sys_updated_on>
         <template><![CDATA[<div id="options-panel" class="overlay">
+  <span>AR device mode</span>
+  <div class="btn-switch" ng-class="{'btn-switch--on':artoggle.switch}" ng-model="artoggle.switch" ng-click="artoggle.switch = !artoggle.switch">
+    <div class="btn-switch-circle" ng-class="{'btn-switch-circle--on':artoggle.switch}"></div>
+  </div>
 </div>
 
 <div id="info-panel" class="overlay" ng-if="data.displayValue">
@@ -174,7 +218,7 @@
 <a-scene arjs='trackingMethod: best;sourceType: webcam;'>
   <a-assets>
     <a-mixin id="main-text"
-             text="align: center; width: 0.6;">
+             text="align: center; width: 0.6; color: orange">
     </a-mixin>
     <a-mixin id="sub-text"
              text="align: left; width: 0.5;">

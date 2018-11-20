@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sp_js_include">
     <sp_js_include action="INSERT_OR_UPDATE">
-        <display_name>Instascan</display_name>
+        <display_name>instascan</display_name>
         <source>url</source>
         <sys_class_name>sp_js_include</sys_class_name>
         <sys_created_by>sylvain</sys_created_by>
         <sys_created_on>2018-10-03 06:03:22</sys_created_on>
         <sys_id>5869e967db302300656053184b9619e4</sys_id>
-        <sys_mod_count>3</sys_mod_count>
-        <sys_name>Instascan</sys_name>
+        <sys_mod_count>7</sys_mod_count>
+        <sys_name>instascan</sys_name>
         <sys_package display_value="OAB IR Asset Viewer POC" source="x_12167_oab_ir_ass">fd05fe93dbb42300656053184b961908</sys_package>
         <sys_policy/>
         <sys_scope display_value="OAB IR Asset Viewer POC">fd05fe93dbb42300656053184b961908</sys_scope>
-        <sys_ui_script/>
+        <sys_ui_script display_value="x_12167_oab_ir_ass.instascan">eab9896e132d2b4003b4b5b12244b0e2</sys_ui_script>
         <sys_update_name>sp_js_include_5869e967db302300656053184b9619e4</sys_update_name>
         <sys_updated_by>syvon</sys_updated_by>
-        <sys_updated_on>2018-10-05 05:27:26</sys_updated_on>
-        <url>https://rawgit.com/schmich/instascan-builds/master/instascan.min.js</url>
+        <sys_updated_on>2018-11-06 08:19:35</sys_updated_on>
+        <url>/sys_attachment.do?sysparm_transaction_scope=fd05fe93dbb42300656053184b961908&amp;sysparm_referring_url=tear_off&amp;view=true&amp;sys_id=039e01a2136d2b4003b4b5b12244b091</url>
     </sp_js_include>
 </record_update>

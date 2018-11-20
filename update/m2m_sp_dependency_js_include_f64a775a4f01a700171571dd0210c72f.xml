@@ -2,7 +2,7 @@
     <m2m_sp_dependency_js_include action="INSERT_OR_UPDATE">
         <order>100</order>
         <sp_dependency display_value="scanner">5522f9ebdb302300656053184b9619f9</sp_dependency>
-        <sp_js_include display_value="Instascan">5869e967db302300656053184b9619e4</sp_js_include>
+        <sp_js_include display_value="instascan">5869e967db302300656053184b9619e4</sp_js_include>
         <sys_class_name>m2m_sp_dependency_js_include</sys_class_name>
         <sys_created_by>syvon</sys_created_by>
         <sys_created_on>2018-10-12 05:38:50</sys_created_on>

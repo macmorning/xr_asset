@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_js_include">
+    <sp_js_include action="INSERT_OR_UPDATE">
+        <display_name>aframedc.min.js</display_name>
+        <source>url</source>
+        <sys_class_name>sp_js_include</sys_class_name>
+        <sys_created_by>syvon</sys_created_by>
+        <sys_created_on>2018-12-11 06:22:12</sys_created_on>
+        <sys_id>bb83053913de270003b4b5b12244b002</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>aframedc.min.js</sys_name>
+        <sys_package display_value="OAB IR Asset Viewer POC" source="x_12167_oab_ir_ass">fd05fe93dbb42300656053184b961908</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="OAB IR Asset Viewer POC">fd05fe93dbb42300656053184b961908</sys_scope>
+        <sys_ui_script/>
+        <sys_update_name>sp_js_include_bb83053913de270003b4b5b12244b002</sys_update_name>
+        <sys_updated_by>syvon</sys_updated_by>
+        <sys_updated_on>2018-12-11 06:34:05</sys_updated_on>
+        <url>https://unpkg.com/a-framedc@1.0.7/dist/aframedc.min.js</url>
+    </sp_js_include>
+</record_update>

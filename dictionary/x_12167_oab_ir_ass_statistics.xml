@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element label="Statistics" max_length="40" name="x_12167_oab_ir_ass_statistics" type="collection">
+        <element label="Event" max_length="40" name="event" type="string"/>
+        <element label="Informations" max_length="1000" name="info" type="string"/>
+        <element label="User Agent" max_length="40" name="user_agent" type="string"/>
+    </element>
+</database>

@@ -3,12 +3,15 @@
         <category>custom</category>
         <client_script><![CDATA[function ($scope, $location, $rootScope, spUtil, $interpolate) {
 	var c = this;
-
-	c.update = function update(content) {
-			c.data.sys_id = content;
+	c.update = function update() {
+			c.data.userAgent = navigator.userAgent;
 			c.server.update();
 	}
 
+	c.data.userAgent = navigator.userAgent;
+	c.data.action = "statLoad";
+	c.update();
+	
   $scope.artoggle = {};
   $scope.artoggle['switch'] = false;
 	$scope.$watch("artoggle.switch" ,function (newValue, oldValue, scope) {
@@ -52,7 +55,9 @@
 		});
 		scanner.addListener('scan', function (content) {
 			console.log("**instascan > " + content);
-			c.update(content);
+			c.data.action = "getInformations";
+			c.data.content = content;
+			c.update();
 		});
 		Instascan.Camera.getCameras().then(function (cameras) {
 			if (cameras.length > 0) {
@@ -71,7 +76,11 @@
 
 }]]></client_script>
         <controller_as>c</controller_as>
-        <css>.overlay {
+        <css>h3 {
+	font-size: 1.3em;
+}
+
+.overlay {
   z-index: 1000;
   position: absolute;
   margin: 5px;
@@ -79,7 +88,7 @@
   background:#7f7f7f;
   background:rgba(0,0,0,0.8);
   color: orange;
-  font-size: smaller;
+  font-size: small;
   a {
     color: orange;
   }
@@ -93,7 +102,6 @@
 #options-panel {
   right: 20px;
   top: 60px;
-  font-size: x-large;
   .btn-switch {
       position: relative;
       display: inline-block;
@@ -144,58 +152,68 @@
         <script><![CDATA[(function() { 
 	options.fields = options.fields || ["assigned_to","install_status","warranty_expiration","serial_number"];
 	
-	if (input) {
-		$sp.log("** input > " + JSON.stringify(input));
-		data.sys_id = input.sys_id;
-	} else {
-		data.sys_id = $sp.getParameter("sys_id");
-	}
-	$sp.log("** XR Viewer server / " + data.sys_id);
-	$sp.log(options.fields.join(","));
-	if (!data.sys_id) {
-		$sp.log("** no sys_id was provided, stopping here");
-		return;
-	}
-	
-	data.table = $sp.getParameter("table") || "alm_asset"; // assume it's an asset
-	var rec = new GlideRecord(data.table);
-	if (rec.get(data.sys_id)) {
-		if (data.table != rec.getRecordClassName()) {
-			// actual class name is not the class that was passed
-			data.table = rec.getRecordClassName();
-			rec = new GlideRecord(data.table);
-			rec.get(data.sys_id);
+	if (input && input.action == "getInformations") {
+			data.sys_id = (input.content ? input.content : false);
+			$sp.log("** XR Viewer server / " + data.sys_id);
+			$sp.log(options.fields.join(","));
+			if (!data.sys_id) {
+				$sp.log("** no sys_id was provided, stopping here");
+				return;
+			}
+
+			data.table = $sp.getParameter("table") || "alm_asset"; // assume it's an asset
+			var rec = new GlideRecord(data.table);
+			if (rec.get(data.sys_id)) {
+				if (data.table != rec.getRecordClassName()) {
+					// actual class name is not the class that was passed
+					data.table = rec.getRecordClassName();
+					rec = new GlideRecord(data.table);
+					rec.get(data.sys_id);
+				}
+				data.tableLabel = rec.getClassDisplayValue();
+				data.displayValue = rec.getDisplayValue();
+				$sp.log("** record found : " + data.tableLabel + " / " + data.displayValue);
+
+				data.secondaryFields = [];
+				data.concatenatedText = "";
+				options.fields.forEach(function(field) {
+					var f = $sp.getField(rec, field);
+					data.secondaryFields.push(f);
+					data.concatenatedText += f.display_value + "\r\n";
+				});
+				data.uri = gs.getProperty('glide.servlet.uri') + rec.getLink(false);
+				logStats("assetFound", JSON.stringify(data));
+			} else {
+				logStats("assetNotFound", data.sys_id);
+				$sp.log("** record NOT found!");		
+			}
+		} else if (input && input.action == "statLoad" && input.userAgent) {
+			data.userAgent = input.userAgent;
+			logStats("loaded");
 		}
-		data.tableLabel = rec.getClassDisplayValue();
-		data.displayValue = rec.getDisplayValue();
-		$sp.log("** record found : " + data.tableLabel + " / " + data.displayValue);
 
-		data.secondaryFields = [];
-		data.concatenatedText = "";
-		options.fields.forEach(function(field) {
-			var f = $sp.getField(rec, field);
-			data.secondaryFields.push(f);
-			data.concatenatedText += f.display_value + "\r\n";
-		});
-		data.uri = gs.getProperty('glide.servlet.uri') + rec.getLink(false);
-	} else {
-		$sp.log("** record NOT found!");		
+	function logStats (event, info) {
+			var grStats = new GlideRecord("x_12167_oab_ir_ass_statistics");
+			grStats.initialize();
+			grStats.user_agent = data.userAgent;
+			grStats.event = event;
+			grStats.info = (info ? info : "n/a");
+			grStats.insert();		
 	}
-
 })();]]></script>
         <servicenow>false</servicenow>
         <sys_class_name>sp_widget</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2018-10-02 17:11:57</sys_created_on>
         <sys_id>26093a57dbb42300656053184b9619ee</sys_id>
-        <sys_mod_count>191</sys_mod_count>
+        <sys_mod_count>211</sys_mod_count>
         <sys_name>XR Viewer Widget</sys_name>
         <sys_package display_value="OAB IR Asset Viewer POC" source="x_12167_oab_ir_ass">fd05fe93dbb42300656053184b961908</sys_package>
         <sys_policy/>
         <sys_scope display_value="OAB IR Asset Viewer POC">fd05fe93dbb42300656053184b961908</sys_scope>
         <sys_update_name>sp_widget_26093a57dbb42300656053184b9619ee</sys_update_name>
         <sys_updated_by>syvon</sys_updated_by>
-        <sys_updated_on>2018-11-20 07:39:44</sys_updated_on>
+        <sys_updated_on>2018-12-11 08:27:07</sys_updated_on>
         <template><![CDATA[<div id="options-panel" class="overlay">
   <span>AR device mode</span>
   <div class="btn-switch" ng-class="{'btn-switch--on':artoggle.switch}" ng-model="artoggle.switch" ng-click="artoggle.switch = !artoggle.switch">
@@ -217,6 +235,7 @@
 
 <a-scene arjs='trackingMethod: best;sourceType: webcam;'>
   <a-assets>
+    <a-entity piechart="foo: bar"></a-entity>
     <a-mixin id="main-text"
              text="align: center; width: 0.6; color: orange">
     </a-mixin>

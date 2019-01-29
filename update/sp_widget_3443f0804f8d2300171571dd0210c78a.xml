@@ -2,9 +2,10 @@
     <sp_widget action="INSERT_OR_UPDATE">
         <category>custom</category>
         <client_script><![CDATA[function($scope, $http, $timeout, $location) {
-  /* widget controller */
-  var c = this;
-	
+	/* widget controller */
+	var c = this;
+	c.scanStarted = false;
+
 	var opts = {
 		// Whether to scan continuously for QR codes. If false, use scanner.scan() to manually scan.
 		// If true, the scanner emits the "scan" event when a QR code is scanned. Default true.
@@ -36,43 +37,61 @@
 		// increases CPU usage but makes scan response faster. Default 1 (i.e. analyze every frame).
 		scanPeriod: 10
 	};
-	
-	var scanner = new Instascan.Scanner(opts);
-	
-	scanner.addListener('active', function (content) {
-		console.log("**instascan is active");
-	});
-	scanner.addListener('inactive', function (content) {
-		console.log("**instascan is inactive");
-	});
-	scanner.addListener('scan', function (content) {
-		console.log("**instascan found " + content);
-		$location.search('id=xr_viewer&sys_id=' + encodeURIComponent(content));
-	});
-	Instascan.Camera.getCameras().then(function (cameras) {
-		if (cameras.length > 0) {
-			scanner.start(cameras[0]);
-			console.log("**instascan started");
-		} else {
-			console.error('**instascan No cameras found.');
-		}
-	});
+
+	c.startScan = function() {
+		var timerId = setInterval(function(){
+			c.scanStarted = true;
+			// wait until the video tag exists
+			if(!($scope.videoEl = $("video")[0])) {
+				return;
+			}
+			clearInterval(timerId);
+
+			// instanciate instascan
+			var opts = {
+				continuous: true,
+				video: $scope.videoEl,
+				mirror: false,
+				captureImage: false,
+				backgroundScan: true,
+				refractoryPeriod: 5000,
+				scanPeriod: 5
+			};
+			var scanner = new Instascan.Scanner(opts);
+
+			scanner.addListener('active', function (content) {
+				console.log("**instascan is active");
+			});
+			scanner.addListener('inactive', function (content) {
+				console.log("**instascan is inactive");
+			});
+			scanner.addListener('scan', function (content) {
+				console.log("**instascan found " + content);
+				$location.search('id=xr_viewer&sys_id=' + encodeURIComponent(content));
+			});
+			Instascan.Camera.getCameras().then(function (cameras) {
+				if (cameras.length > 0) {
+					scanner.start(cameras[0]);
+					console.log("**instascan started");
+				} else {
+					console.error('**instascan No cameras found.');
+				}
+			});	
+		}, 1000);	
+	};
 }]]></client_script>
         <controller_as>c</controller_as>
-        <css>#preview {
-  width: 600px;
-  height: 600px;
-}</css>
+        <css/>
         <data_table>sp_instance</data_table>
         <demo_data/>
         <description/>
         <docs/>
         <field_list/>
         <has_preview>false</has_preview>
-        <id>xr-viewer-scanner</id>
+        <id>dom-scanner</id>
         <internal>false</internal>
         <link/>
-        <name>XR Viewer Scanner</name>
+        <name>DOM Scanner</name>
         <option_schema/>
         <public>false</public>
         <roles/>
@@ -82,14 +101,22 @@
         <sys_created_by>syvon</sys_created_by>
         <sys_created_on>2018-10-04 15:22:54</sys_created_on>
         <sys_id>3443f0804f8d2300171571dd0210c78a</sys_id>
-        <sys_mod_count>11</sys_mod_count>
-        <sys_name>XR Viewer Scanner</sys_name>
+        <sys_mod_count>18</sys_mod_count>
+        <sys_name>DOM Scanner</sys_name>
         <sys_package display_value="OAB IR Asset Viewer POC" source="x_12167_oab_ir_ass">fd05fe93dbb42300656053184b961908</sys_package>
         <sys_policy/>
         <sys_scope display_value="OAB IR Asset Viewer POC">fd05fe93dbb42300656053184b961908</sys_scope>
         <sys_update_name>sp_widget_3443f0804f8d2300171571dd0210c78a</sys_update_name>
         <sys_updated_by>syvon</sys_updated_by>
-        <sys_updated_on>2018-10-12 05:38:28</sys_updated_on>
-        <template><![CDATA[<video id="preview"></video>]]></template>
+        <sys_updated_on>2019-01-29 08:18:57</sys_updated_on>
+        <template><![CDATA[<div ng-if="c.scanStarted">
+  <video id="preview"></video>
+</div>
+<div ng-click="c.startScan()" ng-if="!c.scanStarted">
+	<div class="text-center">
+      <i class="fa fa-3x fa-video-camera"></i><br/>
+      <h3>Start scan</h3>
+  	</div>
+</div>]]></template>
     </sp_widget>
 </record_update>

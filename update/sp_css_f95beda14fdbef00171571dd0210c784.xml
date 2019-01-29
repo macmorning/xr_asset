@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_css">
+    <sp_css action="INSERT_OR_UPDATE">
+        <css>.padding-xs { padding: .25em; }&#13;
+.padding-sm { padding: .5em; }&#13;
+.padding-md { padding: 1em; }&#13;
+.padding-lg { padding: 1.5em; }&#13;
+.padding-xl { padding: 3em; }&#13;
+&#13;
+.padding-x-xs { padding: .25em 0; }&#13;
+.padding-x-sm { padding: .5em 0; }&#13;
+.padding-x-md { padding: 1em 0; }&#13;
+.padding-x-lg { padding: 1.5em 0; }&#13;
+.padding-x-xl { padding: 3em 0; }&#13;
+&#13;
+.padding-y-xs { padding: 0 .25em; }&#13;
+.padding-y-sm { padding: 0 .5em; }&#13;
+.padding-y-md { padding: 0 1em; }&#13;
+.padding-y-lg { padding: 0 1.5em; }&#13;
+.padding-y-xl { padding: 0 3em; }&#13;
+&#13;
+.padding-top-xs { padding-top: .25em; }&#13;
+.padding-top-sm { padding-top: .5em; }&#13;
+.padding-top-md { padding-top: 1em; }&#13;
+.padding-top-lg { padding-top: 1.5em; }&#13;
+.padding-top-xl { padding-top: 3em; }&#13;
+&#13;
+.padding-right-xs { padding-right: .25em; }&#13;
+.padding-right-sm { padding-right: .5em; }&#13;
+.padding-right-md { padding-right: 1em; }&#13;
+.padding-right-lg { padding-right: 1.5em; }&#13;
+.padding-right-xl { padding-right: 3em; }&#13;
+&#13;
+.padding-bottom-xs { padding-bottom: .25em; }&#13;
+.padding-bottom-sm { padding-bottom: .5em; }&#13;
+.padding-bottom-md { padding-bottom: 1em; }&#13;
+.padding-bottom-lg { padding-bottom: 1.5em; }&#13;
+.padding-bottom-xl { padding-bottom: 3em; }</css>
+        <name>domPositionningSpacing.css</name>
+        <sys_class_name>sp_css</sys_class_name>
+        <sys_created_by>syvon</sys_created_by>
+        <sys_created_on>2019-01-29 07:40:24</sys_created_on>
+        <sys_id>f95beda14fdbef00171571dd0210c784</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>domPositionningSpacing.css</sys_name>
+        <sys_package display_value="OAB IR Asset Viewer POC" source="x_12167_oab_ir_ass">fd05fe93dbb42300656053184b961908</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="OAB IR Asset Viewer POC">fd05fe93dbb42300656053184b961908</sys_scope>
+        <sys_update_name>sp_css_f95beda14fdbef00171571dd0210c784</sys_update_name>
+        <sys_updated_by>syvon</sys_updated_by>
+        <sys_updated_on>2019-01-29 07:40:56</sys_updated_on>
+    </sp_css>
+</record_update>

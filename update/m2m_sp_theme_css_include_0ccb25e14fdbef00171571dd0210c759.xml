@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="m2m_sp_theme_css_include">
+    <m2m_sp_theme_css_include action="INSERT_OR_UPDATE">
+        <order/>
+        <sp_css_include display_value="domPositionningSpacing.css">766beda14fdbef00171571dd0210c728</sp_css_include>
+        <sp_theme display_value="DOM Stock">f9ab61e14fdbef00171571dd0210c7be</sp_theme>
+        <sys_class_name>m2m_sp_theme_css_include</sys_class_name>
+        <sys_created_by>syvon</sys_created_by>
+        <sys_created_on>2019-01-29 07:41:51</sys_created_on>
+        <sys_id>0ccb25e14fdbef00171571dd0210c759</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>domPositionningSpacing.css.DOM Stock</sys_name>
+        <sys_package display_value="OAB IR Asset Viewer POC" source="x_12167_oab_ir_ass">fd05fe93dbb42300656053184b961908</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="OAB IR Asset Viewer POC">fd05fe93dbb42300656053184b961908</sys_scope>
+        <sys_update_name>m2m_sp_theme_css_include_0ccb25e14fdbef00171571dd0210c759</sys_update_name>
+        <sys_updated_by>syvon</sys_updated_by>
+        <sys_updated_on>2019-01-29 07:41:51</sys_updated_on>
+    </m2m_sp_theme_css_include>
+</record_update>

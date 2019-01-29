@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_instance">
+    <sp_instance action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <class_name/>
+        <color>default</color>
+        <css/>
+        <glyph>empty</glyph>
+        <id/>
+        <order>1</order>
+        <roles/>
+        <short_description/>
+        <size>md</size>
+        <sp_column display_value="2">1ab9ad614fdbef00171571dd0210c7de</sp_column>
+        <sp_widget display_value="Announcements">94c300c7e777320075c2a117c2f6a9e7</sp_widget>
+        <sys_class_name>sp_instance</sys_class_name>
+        <sys_created_by>syvon</sys_created_by>
+        <sys_created_on>2019-01-29 06:41:48</sys_created_on>
+        <sys_id>dc0e19294f9bef00171571dd0210c746</sys_id>
+        <sys_mod_count>9</sys_mod_count>
+        <sys_name>Announcements</sys_name>
+        <sys_package display_value="OAB IR Asset Viewer POC" source="x_12167_oab_ir_ass">fd05fe93dbb42300656053184b961908</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="OAB IR Asset Viewer POC">fd05fe93dbb42300656053184b961908</sys_scope>
+        <sys_update_name>sp_instance_dc0e19294f9bef00171571dd0210c746</sys_update_name>
+        <sys_updated_by>syvon</sys_updated_by>
+        <sys_updated_on>2019-01-29 07:33:17</sys_updated_on>
+        <title>Announcements</title>
+        <url/>
+        <widget_parameters><![CDATA[{
+	"title": {
+		"value": "Announcements",
+		"displayValue": "Announcements"
+	},
+	"glyph": {
+		"value": "empty",
+		"displayValue": ""
+	},
+	"type": {
+		"value": "",
+		"displayValue": ""
+	},
+	"paginate": {
+		"value": "true",
+		"displayValue": "true"
+	},
+	"max_records": {
+		"value": 2,
+		"displayValue": "2"
+	},
+	"view_all_page": {
+		"value": "ecc828d3e733320075c2a117c2f6a91f",
+		"displayValue": "announcements"
+	},
+	"use_display_style": {
+		"value": "",
+		"displayValue": ""
+	}
+}]]></widget_parameters>
+    </sp_instance>
+    <sys_translated_text action="delete_multiple" query="documentkey=dc0e19294f9bef00171571dd0210c746"/>
+</record_update>

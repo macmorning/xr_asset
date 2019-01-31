@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[function($rootScope, $scope, spModal, $timeout) {
+	/* widget controller */
+	var c = this;
+	var shared = {
+		scanner: {}
+	};
+	$rootScope.$on('scanner.found', function(event,data) {
+		$timeout(function(){
+			console.log(data);
+		});
+	});	
+	c.openScanner = function() {
+		c.modal = spModal.open({
+			widget: 'dom-scanner',
+			widgetInput: {
+				scanNow: true
+			},
+			shared: shared,
+			size: "md",
+			buttons: []
+		}).then(function() {}, function() {
+			try {
+				// try deactivating the scanner in case we closed the modal without stopping it first
+				shared.scanner.stop();
+			} catch(e) {}
+		}); 
+	}
+}]]></client_script>
+        <controller_as>c</controller_as>
+        <css/>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>dom-scanner-link</id>
+        <internal>false</internal>
+        <link/>
+        <name>DOM Scanner link</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {  /* populate the 'data' object */  /* e.g., data.table = $sp.getValue('table'); */})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>syvon</sys_created_by>
+        <sys_created_on>2019-01-30 17:38:52</sys_created_on>
+        <sys_id>0bfdb0024fdb2340171571dd0210c7fa</sys_id>
+        <sys_mod_count>19</sys_mod_count>
+        <sys_name>DOM Scanner link</sys_name>
+        <sys_package display_value="OAB IR Asset Viewer POC" source="x_12167_oab_ir_ass">fd05fe93dbb42300656053184b961908</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="OAB IR Asset Viewer POC">fd05fe93dbb42300656053184b961908</sys_scope>
+        <sys_update_name>sp_widget_0bfdb0024fdb2340171571dd0210c7fa</sys_update_name>
+        <sys_updated_by>syvon</sys_updated_by>
+        <sys_updated_on>2019-01-31 08:16:31</sys_updated_on>
+        <template><![CDATA[<div>
+	<div class="text-center" ng-click="c.openScanner()">
+      <i class="fa fa-3x fa-qrcode"></i><br/>
+      <h3>${Start scanning}</h3>
+  </div>
+</div>]]></template>
+    </sp_widget>
+</record_update>

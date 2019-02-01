@@ -6,9 +6,9 @@
         <sys_id>150555b11312670003b4b5b12244b08d</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_name>x_12167_oab_ir_ass_statistics.x_12167_oab_ir_ass.statistics_user</sys_name>
-        <sys_package display_value="OAB IR Asset Viewer POC" source="x_12167_oab_ir_ass">fd05fe93dbb42300656053184b961908</sys_package>
+        <sys_package display_value="OAB Datacenter Operations" source="x_12167_oab_ir_ass">fd05fe93dbb42300656053184b961908</sys_package>
         <sys_policy/>
-        <sys_scope display_value="OAB IR Asset Viewer POC">fd05fe93dbb42300656053184b961908</sys_scope>
+        <sys_scope display_value="OAB Datacenter Operations">fd05fe93dbb42300656053184b961908</sys_scope>
         <sys_security_acl display_value="x_12167_oab_ir_ass_statistics">1d0555b11312670003b4b5b12244b07d</sys_security_acl>
         <sys_update_name>sys_security_acl_role_150555b11312670003b4b5b12244b08d</sys_update_name>
         <sys_updated_by>syvon</sys_updated_by>

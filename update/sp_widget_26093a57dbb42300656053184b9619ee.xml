@@ -181,9 +181,10 @@
 					data.concatenatedText += f.display_value + "\r\n";
 				});
 				data.uri = gs.getProperty('glide.servlet.uri') + rec.getLink(false);
-				logStats("assetFound", JSON.stringify(data));
+				logStats("itemFound", JSON.stringify(data));
 			} else {
-				logStats("assetNotFound", data.sys_id);
+				data.displayValue = "item not found";
+				logStats("itemNotFound", data.sys_id);
 				$sp.log("** record NOT found!");		
 			}
 		} else if (input && input.action == "statLoad" && input.userAgent) {
@@ -205,14 +206,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2018-10-02 17:11:57</sys_created_on>
         <sys_id>26093a57dbb42300656053184b9619ee</sys_id>
-        <sys_mod_count>216</sys_mod_count>
+        <sys_mod_count>217</sys_mod_count>
         <sys_name>XR Viewer Widget</sys_name>
-        <sys_package display_value="OAB IR Asset Viewer POC" source="x_12167_oab_ir_ass">fd05fe93dbb42300656053184b961908</sys_package>
+        <sys_package display_value="OAB Datacenter Operations" source="x_12167_oab_ir_ass">fd05fe93dbb42300656053184b961908</sys_package>
         <sys_policy/>
-        <sys_scope display_value="OAB IR Asset Viewer POC">fd05fe93dbb42300656053184b961908</sys_scope>
+        <sys_scope display_value="OAB Datacenter Operations">fd05fe93dbb42300656053184b961908</sys_scope>
         <sys_update_name>sp_widget_26093a57dbb42300656053184b9619ee</sys_update_name>
         <sys_updated_by>syvon</sys_updated_by>
-        <sys_updated_on>2018-12-21 06:18:26</sys_updated_on>
+        <sys_updated_on>2019-02-01 07:10:17</sys_updated_on>
         <template><![CDATA[<div id="options-panel" class="overlay">
   <span>AR device mode</span>
   <div class="btn-switch" ng-class="{'btn-switch--on':artoggle.switch}" ng-model="artoggle.switch" ng-click="artoggle.switch = !artoggle.switch">

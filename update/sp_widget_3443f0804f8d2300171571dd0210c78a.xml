@@ -68,16 +68,17 @@
 			shared.scanner = new Instascan.Scanner(opts);
 
 			shared.scanner.addListener('active', function (content) {
-				console.log("**instascan is active");
+				console.log("** DOM Scanner is active");
 			});
 			shared.scanner.addListener('inactive', function (content) {
 				c.scanRequested = false;
 				c.scanStarted = false;
 			});
 			shared.scanner.addListener('scan', function (content) {
-				console.log("**instascan found " + content);
+				console.log("** DOM Scanner found > " + content);
 				shared.scanner.stop();
 				$rootScope.$broadcast('scanner.found', content);
+				$scope.$parent.$dismiss();
 			});
 			Instascan.Camera.getCameras().then(function (cameras) {
 				if (cameras.length > 0) {
@@ -87,13 +88,13 @@
 				} else {
 					c.scanRequested = false;
 					c.scanError = true;
-					console.error('**instascan No cameras found.');
+					console.error('** Browser did not provide any camera');
 				}
 			}).catch(function(error) {
 					shared.scanner.stop();
 					c.scanRequested = false;
 					c.scanError = true;
-					console.error(error);				
+					console.error(error);
 			});	
 		}, 1000);	
 	};
@@ -128,14 +129,14 @@
         <sys_created_by>syvon</sys_created_by>
         <sys_created_on>2018-10-04 15:22:54</sys_created_on>
         <sys_id>3443f0804f8d2300171571dd0210c78a</sys_id>
-        <sys_mod_count>56</sys_mod_count>
+        <sys_mod_count>60</sys_mod_count>
         <sys_name>DOM Scanner</sys_name>
-        <sys_package display_value="OAB IR Asset Viewer POC" source="x_12167_oab_ir_ass">fd05fe93dbb42300656053184b961908</sys_package>
+        <sys_package display_value="OAB Datacenter Operations" source="x_12167_oab_ir_ass">fd05fe93dbb42300656053184b961908</sys_package>
         <sys_policy/>
-        <sys_scope display_value="OAB IR Asset Viewer POC">fd05fe93dbb42300656053184b961908</sys_scope>
+        <sys_scope display_value="OAB Datacenter Operations">fd05fe93dbb42300656053184b961908</sys_scope>
         <sys_update_name>sp_widget_3443f0804f8d2300171571dd0210c78a</sys_update_name>
         <sys_updated_by>syvon</sys_updated_by>
-        <sys_updated_on>2019-01-31 08:07:35</sys_updated_on>
+        <sys_updated_on>2019-01-31 10:31:59</sys_updated_on>
         <template><![CDATA[<div ng-if="c.scanRequested" class="text-center">
   <video autoplay="false" height="320" ng-show="c.scanStarted" id="preview" ng-click="c.stopScan()"></video>
 </div>

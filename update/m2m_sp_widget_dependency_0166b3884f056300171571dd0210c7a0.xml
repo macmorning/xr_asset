@@ -8,9 +8,9 @@
         <sys_id>0166b3884f056300171571dd0210c7a0</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_name>instascan.XR Viewer Widget</sys_name>
-        <sys_package display_value="OAB IR Asset Viewer POC" source="x_12167_oab_ir_ass">fd05fe93dbb42300656053184b961908</sys_package>
+        <sys_package display_value="OAB Datacenter Operations" source="x_12167_oab_ir_ass">fd05fe93dbb42300656053184b961908</sys_package>
         <sys_policy/>
-        <sys_scope display_value="OAB IR Asset Viewer POC">fd05fe93dbb42300656053184b961908</sys_scope>
+        <sys_scope display_value="OAB Datacenter Operations">fd05fe93dbb42300656053184b961908</sys_scope>
         <sys_update_name>m2m_sp_widget_dependency_0166b3884f056300171571dd0210c7a0</sys_update_name>
         <sys_updated_by>syvon</sys_updated_by>
         <sys_updated_on>2018-10-05 05:35:26</sys_updated_on>

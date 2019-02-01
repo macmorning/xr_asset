@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_dependency">
+    <sp_dependency action="INSERT_OR_UPDATE">
+        <module/>
+        <name>qrcode</name>
+        <page_load>false</page_load>
+        <sp_portals/>
+        <sys_class_name>sp_dependency</sys_class_name>
+        <sys_created_by>syvon</sys_created_by>
+        <sys_created_on>2019-02-01 06:49:55</sys_created_on>
+        <sys_id>749c3c624f1f6340171571dd0210c78e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>qrcode</sys_name>
+        <sys_package display_value="OAB Datacenter Operations" source="x_12167_oab_ir_ass">fd05fe93dbb42300656053184b961908</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="OAB Datacenter Operations">fd05fe93dbb42300656053184b961908</sys_scope>
+        <sys_update_name>sp_dependency_749c3c624f1f6340171571dd0210c78e</sys_update_name>
+        <sys_updated_by>syvon</sys_updated_by>
+        <sys_updated_on>2019-02-01 06:49:55</sys_updated_on>
+    </sp_dependency>
+</record_update>

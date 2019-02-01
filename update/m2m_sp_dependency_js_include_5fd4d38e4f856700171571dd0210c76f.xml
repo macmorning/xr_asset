@@ -9,9 +9,9 @@
         <sys_id>5fd4d38e4f856700171571dd0210c76f</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_name>aframe-ar.aframe-master.min.js - master</sys_name>
-        <sys_package display_value="OAB IR Asset Viewer POC" source="x_12167_oab_ir_ass">fd05fe93dbb42300656053184b961908</sys_package>
+        <sys_package display_value="OAB Datacenter Operations" source="x_12167_oab_ir_ass">fd05fe93dbb42300656053184b961908</sys_package>
         <sys_policy/>
-        <sys_scope display_value="OAB IR Asset Viewer POC">fd05fe93dbb42300656053184b961908</sys_scope>
+        <sys_scope display_value="OAB Datacenter Operations">fd05fe93dbb42300656053184b961908</sys_scope>
         <sys_update_name>m2m_sp_dependency_js_include_5fd4d38e4f856700171571dd0210c76f</sys_update_name>
         <sys_updated_by>syvon</sys_updated_by>
         <sys_updated_on>2018-10-11 08:16:48</sys_updated_on>

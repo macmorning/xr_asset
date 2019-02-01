@@ -8,9 +8,9 @@
         <sys_id>ba579b57dbf42300656053184b961934</sys_id>
         <sys_mod_count>10</sys_mod_count>
         <sys_name>aframe-ar.js</sys_name>
-        <sys_package display_value="OAB IR Asset Viewer POC" source="x_12167_oab_ir_ass">fd05fe93dbb42300656053184b961908</sys_package>
+        <sys_package display_value="OAB Datacenter Operations" source="x_12167_oab_ir_ass">fd05fe93dbb42300656053184b961908</sys_package>
         <sys_policy/>
-        <sys_scope display_value="OAB IR Asset Viewer POC">fd05fe93dbb42300656053184b961908</sys_scope>
+        <sys_scope display_value="OAB Datacenter Operations">fd05fe93dbb42300656053184b961908</sys_scope>
         <sys_ui_script display_value="x_12167_oab_ir_ass.aframe-ar">335a81ae132d2b4003b4b5b12244b0fc</sys_ui_script>
         <sys_update_name>sp_js_include_ba579b57dbf42300656053184b961934</sys_update_name>
         <sys_updated_by>syvon</sys_updated_by>

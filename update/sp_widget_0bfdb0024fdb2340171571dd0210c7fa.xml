@@ -100,7 +100,7 @@
 				data.displayValue = rec.getDisplayValue();
 				$sp.log("** record found : " + data.tableLabel + " / " + data.displayValue);
 
-				data.uri = "?id=" + page + "&table=" + rec.getRecordClassName() + "&sys_id=" + rec.getUniqueValue();
+				data.uri = "?id=" + page + "&table=" + rec.getRecordClassName() + "&sys_id=" + rec.getUniqueValue() + "&view=DOM";
 				logStats("itemFound", JSON.stringify(data));
 			} else {
 				logStats("itemNotFound", data.sys_id);
@@ -126,14 +126,14 @@
         <sys_created_by>syvon</sys_created_by>
         <sys_created_on>2019-01-30 17:38:52</sys_created_on>
         <sys_id>0bfdb0024fdb2340171571dd0210c7fa</sys_id>
-        <sys_mod_count>32</sys_mod_count>
+        <sys_mod_count>33</sys_mod_count>
         <sys_name>DOM Scanner link</sys_name>
         <sys_package display_value="OAB Datacenter Operations" source="x_12167_oab_ir_ass">fd05fe93dbb42300656053184b961908</sys_package>
         <sys_policy/>
         <sys_scope display_value="OAB Datacenter Operations">fd05fe93dbb42300656053184b961908</sys_scope>
         <sys_update_name>sp_widget_0bfdb0024fdb2340171571dd0210c7fa</sys_update_name>
         <sys_updated_by>syvon</sys_updated_by>
-        <sys_updated_on>2019-02-01 08:21:36</sys_updated_on>
+        <sys_updated_on>2019-02-12 07:13:28</sys_updated_on>
         <template><![CDATA[<div>
 	<div class="text-center" ng-click="c.openScanner()">
       <i class="fa fa-3x fa-qrcode"></i><br/>

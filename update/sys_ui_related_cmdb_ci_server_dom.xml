@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_ui_related sys_domain="global" table="cmdb_ci_server" version="2" view="dom">
+        <sys_ui_related_list_entry action="INSERT_OR_UPDATE">
+            <filter/>
+            <list_id display_value="Server - DOM" name="cmdb_ci_server" related_list="NULL" sys_domain="global" view="181ba14e136bab4003b4b5b12244b0e0">ad4c298e136bab4003b4b5b12244b0fd</list_id>
+            <order_by/>
+            <position>0</position>
+            <related_list>cmdb_subscriber.item</related_list>
+            <sys_class_name>sys_ui_related_list_entry</sys_class_name>
+            <sys_created_by>syvon</sys_created_by>
+            <sys_created_on>2019-02-12 07:16:50</sys_created_on>
+            <sys_id>2d4c298e136bab4003b4b5b12244b0fe</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>syvon</sys_updated_by>
+            <sys_updated_on>2019-02-12 07:16:50</sys_updated_on>
+        </sys_ui_related_list_entry>
+        <sys_ui_related_list_entry action="INSERT_OR_UPDATE">
+            <filter/>
+            <list_id display_value="Server - DOM" name="cmdb_ci_server" related_list="NULL" sys_domain="global" view="181ba14e136bab4003b4b5b12244b0e0">ad4c298e136bab4003b4b5b12244b0fd</list_id>
+            <order_by/>
+            <position>1</position>
+            <related_list>cmdb_related.ci_child</related_list>
+            <sys_class_name>sys_ui_related_list_entry</sys_class_name>
+            <sys_created_by>syvon</sys_created_by>
+            <sys_created_on>2019-02-12 07:16:50</sys_created_on>
+            <sys_id>e54c298e136bab4003b4b5b12244b0ff</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>syvon</sys_updated_by>
+            <sys_updated_on>2019-02-12 07:16:50</sys_updated_on>
+        </sys_ui_related_list_entry>
+        <sys_ui_related_list_entry action="INSERT_OR_UPDATE">
+            <filter/>
+            <list_id display_value="Server - DOM" name="cmdb_ci_server" related_list="NULL" sys_domain="global" view="181ba14e136bab4003b4b5b12244b0e0">ad4c298e136bab4003b4b5b12244b0fd</list_id>
+            <order_by/>
+            <position>2</position>
+            <related_list>task.cmdb_ci</related_list>
+            <sys_class_name>sys_ui_related_list_entry</sys_class_name>
+            <sys_created_by>syvon</sys_created_by>
+            <sys_created_on>2019-02-12 07:16:50</sys_created_on>
+            <sys_id>6d4c298e136bab4003b4b5b12244b0ff</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>syvon</sys_updated_by>
+            <sys_updated_on>2019-02-12 07:16:50</sys_updated_on>
+        </sys_ui_related_list_entry>
+        <sys_ui_related_list action="INSERT_OR_UPDATE">
+            <calculated_name>Server - DOM</calculated_name>
+            <filter/>
+            <name>cmdb_ci_server</name>
+            <order_by/>
+            <position/>
+            <related_list/>
+            <sys_class_name>sys_ui_related_list</sys_class_name>
+            <sys_created_by>syvon</sys_created_by>
+            <sys_created_on>2019-02-12 07:16:50</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>ad4c298e136bab4003b4b5b12244b0fd</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>Server - DOM</sys_name>
+            <sys_package display_value="OAB Datacenter Operations" source="x_12167_oab_ir_ass">fd05fe93dbb42300656053184b961908</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="OAB Datacenter Operations">fd05fe93dbb42300656053184b961908</sys_scope>
+            <sys_update_name>sys_ui_related_cmdb_ci_server_dom</sys_update_name>
+            <sys_updated_by>syvon</sys_updated_by>
+            <sys_updated_on>2019-02-12 07:16:50</sys_updated_on>
+            <sys_user/>
+            <view display_value="DOM" name="dom">181ba14e136bab4003b4b5b12244b0e0</view>
+            <view_name/>
+        </sys_ui_related_list>
+    </sys_ui_related>
+</record_update>
